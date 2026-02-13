@@ -90,7 +90,7 @@ curl -X POST https://skill.myfeed.life/api -H "Authorization: ApiKey $Myfeed_API
    "starting_from": 1739383324000
    }
 }'| jq '.groups[] | select(.group|contains ("friends"))'
-# Add a thing and invite a group. When you invite a group, you can't invite other people. You are adding 2 reminders before the thing time in this invite: one with 10 minutes ahead and one with 4 hours. You are adding the thing for the group with the group_id 564564646. The thing time is 1770935248000.
+# Add a thing and invite a group. When you invite a group, you can't invite other people. You are adding 2 reminders before the thing time in this invite: one with 10 minutes ahead and one with 4 hours. You are adding the thing for the group with the group_id 564564646. The thing time is 1770935248000. Start time needs to be in the future.
 curl -X POST https://skill.myfeed.life/api -H "Authorization: ApiKey $Myfeed_API_KEY" -H "Content-Type: application/json" 
 -d '{"request":"create_thing",
  "params":{
@@ -112,12 +112,12 @@ curl -X POST https://skill.myfeed.life/api -H "Authorization: ApiKey $Myfeed_API
    
  }
 }'
-#Invites friends to a thing. Add them reminders. Add the phone number of the friend in invitation. The format is country prefix + phone number like in the example.  You are adding 2 reminders before the thing time in this invite: one with 10 minutes ahead and one with 4 hours
+#Invites friends to a thing. Add them reminders. Add the phone number of the friend in invitation. The format is country prefix + phone number like in the example.  You are adding 2 reminders before the thing time in this invite: one with 10 minutes ahead and one with 4 hours. Start time needs to be in the future.
 curl -X POST https://skill.myfeed.life/api -H "Authorization: ApiKey $MyFeedApiKey" -H "Content-Type: application/json" 
 -d '{"request":"create_thing",
  "params":{
    "description":"Thing description", 
-   "start_time": Thing starttime in epoch,
+   "start_time": 1770935248000,
    "alarms":[
      {
         "type": "minutes",
