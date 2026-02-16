@@ -1,6 +1,7 @@
 ---
 name: my-life-feed
 description: Manage MyFeed things and groups via the MyFeed REST API.
+homepage: https://myfeed.life
 metadata: {"clawdbot":{"emoji":"📋","requires":{"bins":["jq"],"env":["Myfeed_API_KEY"]}}}
 ---
 
